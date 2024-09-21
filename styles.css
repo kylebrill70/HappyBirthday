@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F5DBEC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Change to min-height */
+  position: relative; /* Allow positioning of child elements */
+}
+
+.card {
+  background-color: #E7F7F7;
+  padding: 60px 30px;
+  border-radius: 16px;
+  width: 1000px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid #A3BFBF;
+  position: relative;
+  margin-top: 20px; /* Create space above the card */
+  z-index: 2; /* Ensure card is above canvas */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.header h1 {
+  font-size: 50px;
+  color: #ff00e1;
+  text-shadow: 2px 2px #B03A67;
+}
+
+.star {
+  width: 70px;
+  height: 70px;
+  background: url('star.png') no-repeat center/contain;
+  animation: rotateStar 3s infinite linear;
+}
+
+@keyframes rotateStar {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.timeline-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.photo-placeholder {
+  width: 300px;
+  height: 300px;
+  background-color: #A3BFBF;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.photo-placeholder:hover {
+  transform: scale(1.1);
+}
+
+.photo-placeholder:hover img {
+  transform: scale(1.1);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #B03A67;
+}
+
+#fireworksCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Set to 100% to cover entire viewport */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+}
+
+#playVideoButton {
+  background-color: #ff00e1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#playVideoButton:hover {
+  background-color: #B03A67;
+}
